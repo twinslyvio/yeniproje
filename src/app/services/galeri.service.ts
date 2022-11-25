@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { delay, Observable } from "rxjs";
 import { GaleriIcerik } from "../models/galeri-icerik";
 
 
@@ -12,11 +12,11 @@ export class GaleriService {
         constructor (private http: HttpClient) {}
 
         getGallery(): Observable<GaleriIcerik[]> {
-            return this.http.get<GaleriIcerik[]>(this.GaleriUrl + "galeri.json" );
+            return this.http.get<GaleriIcerik[]>(this.GaleriUrl + "galeri.json" ).pipe(delay(1000));
         }
 
         getGalleryById(id: string): Observable<GaleriIcerik> {
-            return this.http.get<GaleriIcerik>(this.GaleriUrl + "galeri/" + id + ".json" );
+            return this.http.get<GaleriIcerik>(this.GaleriUrl + "galeri/" + id + ".json" ).pipe(delay(1000));
         }
 
         addGallery( konvoy: GaleriIcerik ): Observable<GaleriIcerik> {

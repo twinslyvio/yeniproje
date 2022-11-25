@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GaleriService } from 'src/app/services/galeri.service';
 
@@ -11,35 +12,46 @@ import { GaleriService } from 'src/app/services/galeri.service';
 })
 export class GaleriKonvoyEkleComponent implements OnInit {
 
+   // two-bay binding // 
+   galeriValueModel: any = {};
+   // two-bay binding // duyuruEkle
+   galeriMsg:string = "";
+
   constructor(
     private http: HttpClient, 
     private GaleriSrvc: GaleriService,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
   }
 
-  konvoyEkle(isim:any,aracsayisi:any,kapakresmi:any,image1:any,image2:any,image3:any,image4:any,videoUrl:any,aciklama:any,isActive:any) {
+  galeriEkleSubmit(galeriForms: NgForm) {
 
     const postGaleri = {
       id: 1, 
-      name: isim.value, 
-      aracsayisi : aracsayisi.value, 
-      imageUrl: kapakresmi.value, 
-      image1Url: image1.value,
-      image2Url: image2.value, 
-      image3Url: image3.value,
-      image4Url: image4.value,
-      aciklama: aciklama.value, 
-      videoUrl: videoUrl.value,  
-      isActive: isActive.checked,
+      name: this.galeriValueModel.name, 
+      aracsayisi : this.galeriValueModel.aracsayisi, 
+      imageUrl: this.galeriValueModel.imageUrl, 
+      image1Url: this.galeriValueModel.image1Url,
+      image2Url: this.galeriValueModel.image2Url, 
+      image3Url: this.galeriValueModel.image3Url,
+      image4Url: this.galeriValueModel.image4Url,
+      aciklama: this.galeriValueModel.aciklama, 
+      videoUrl: this.galeriValueModel.videoUrl,  
+      isActive: this.galeriValueModel.isActive,
     }
 
-    this.GaleriSrvc.addGallery(postGaleri).subscribe(galeridata => {
-        // this.router.navigate(["/galeri"])
-        alert("İçerik Başarı ile eklendi")
-    });
+
+    if(galeriForms) {
+      this.GaleriSrvc.addGallery(postGaleri).subscribe(galeridata => {
+        this.galeriMsg = "İçerik Başarı ile eklendi"
+        window.location.reload();
+      });
+    } else {
+      this.galeriMsg = "Formu Kontrol Ediniz!"
+      return;
+    }
 
   }
 

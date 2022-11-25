@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { delay, Observable } from "rxjs";
 import { twitchIcerik } from "../models/twitch-icerik";
 
 
@@ -12,11 +12,11 @@ import { twitchIcerik } from "../models/twitch-icerik";
         constructor(private http: HttpClient) { }
 
         getTwitch(): Observable<twitchIcerik[]> {
-            return this.http.get<twitchIcerik[]>(this.twitchUrl + "twitch.json");
+            return this.http.get<twitchIcerik[]>(this.twitchUrl + "twitch.json").pipe(delay(1000));
         }
 
         getTwitchById(id: string): Observable<twitchIcerik> {
-            return this.http.get<twitchIcerik>(this.twitchUrl + "twitch/" + id + ".json");
+            return this.http.get<twitchIcerik>(this.twitchUrl + "twitch/" + id + ".json").pipe(delay(1000));
         }
 
         addTwitch( yayinci: twitchIcerik ) : Observable<twitchIcerik> {

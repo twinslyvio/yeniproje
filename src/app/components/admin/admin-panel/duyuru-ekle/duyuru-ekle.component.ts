@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { duyuruService } from 'src/app/services/duyuru.service';
+import { NgForm } from '@angular/forms';
+import { formatCurrency } from '@angular/common';
 
 @Component({
   selector: 'app-duyuru-ekle',
@@ -11,30 +13,46 @@ import { duyuruService } from 'src/app/services/duyuru.service';
 })
 export class DuyuruEkleComponent implements OnInit {
 
+
+  duyuruMsg: string = "";
+  
+
+ // two-bay binding // 
+  duyuruValueModel: any = {};
+  // two-bay binding // duyuruEkle
+
   constructor(
     private http: HttpClient,
     private router: Router,
     private DuyuruSrvc: duyuruService,
   ) { }
 
-  duyuruEkle(duyuruName:any,duyuruKapak:any,dyrimage1:any,dyrimage2:any,dyrimage3:any,duyuruAciklama:any,isActive:any) {
+  duyuruEkleSubmit(duyuruForm: NgForm) {
+
 
     const postDuyuru = {
       id:1,
-      duyuruName: duyuruName.value,
-      duyuruKapak: duyuruKapak.value,
-      dyrimage1: dyrimage1.value,
-      dyrimage2: dyrimage2.value,
-      dyrimage3: dyrimage3.value,
-      duyuruAciklama: duyuruAciklama.value,
-      isActive: isActive.checked,
+      duyuruName: this.duyuruValueModel.duyuruName,
+      duyuruKapak: this.duyuruValueModel.duyuruKapak,
+      dyrimage1: this.duyuruValueModel.dyrimage1,
+      dyrimage2: this.duyuruValueModel.dyrimage2,
+      dyrimage3: this.duyuruValueModel.dyrimage3,
+      duyuruAciklama: this.duyuruValueModel.duyuruAciklama,
+      isActive: this.duyuruValueModel.isActive,
     }
 
-    this.DuyuruSrvc.addDuyuru(postDuyuru).subscribe(duyuruData => {
-      alert("Duyuru Başarı ile eklendi")
-      window.location.reload()
-    });
+    if(duyuruForm.valid) {
+      this.DuyuruSrvc.addDuyuru(postDuyuru).subscribe(duyuruData => {
+        window.location.reload()
+        this.duyuruMsg = "Duyuru Başarı ile Eklendi";
+        return;
+      });
+    } else {
+      this.duyuruMsg ="Formu Kontrol ediniz.";
+      return;
+    }
 
+    console.log(this.duyuruValueModel)
   }
 
   ngOnInit(): void {

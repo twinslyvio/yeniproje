@@ -15,17 +15,20 @@
                 </div>
                 <div class="form-outline mb-4">
                   <input type="email"  class="form-control form-control-lg"
-                    placeholder="Email adresinizi girin." />
+                    placeholder="Email adresinizi girin." #email />
                   <label class="form-label" for="form3Example3"></label>
                 </div>
                 <div class="form-outline mb-3">
                   <input type="password"  class="form-control form-control-lg"
-                    placeholder="Şifrenizi girin." />
+                    placeholder="Şifrenizi girin." #password/>
                   <label class="form-label" ></label>
+                </div>
+                <div class="alert alert-warning" *ngIf="error">
+                  {{ error }}
                 </div>
                 <div class="text-center text-lg-start mt-4 pt-2">
                   <button type="button" class="btn btn-primary btn-lg"
-                    style="padding-left: 2.5rem; padding-right: 2.5rem;" routerLink="/adminpanel/yonetim" >Giriş</button>
+                    style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="admingiris(email,password)" >Giriş</button>
                 </div>
               </form>
             </div>

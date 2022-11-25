@@ -11,6 +11,7 @@ import { GaleriService } from 'src/app/services/galeri.service';
 export class GaleriListComponent implements OnInit {
 
    galeri: GaleriIcerik[] = [];
+   GaleriLoading: boolean = false;
 
    constructor(private GaleriServices: GaleriService, )  {}
 
@@ -19,8 +20,11 @@ export class GaleriListComponent implements OnInit {
   ngOnInit(): void {
     this.GaleriServices.getGallery()
       .subscribe(galeridata => {
+        this.GaleriLoading = true;
+        
         for(const key in galeridata) {
           this.galeri.push({ ...galeridata[key], id: key, });
+          this.GaleriLoading = false;
         }
       });
   }

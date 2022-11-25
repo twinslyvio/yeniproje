@@ -8,7 +8,7 @@ import { EkibekatilComponent } from './components/ekibekatil/ekibekatil.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { GaleriComponent } from './components/galeri/galeri.component';
 import { GaleriListComponent } from './components/galeri/galeri-list/galeri-list.component';
-import { IndexComponent } from './components/index/index.component';
+import { IndexComponent } from './components/galeri/index/index.component';
 import { InfoComponent } from './components/info/info.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TwitchComponent } from './components/twitch/twitch.component';
@@ -24,6 +24,7 @@ import { TwitchPartnerEkleComponent } from './components/admin/admin-panel/twitc
 import { TwitchDetayComponent } from './components/twitch/twitch-detay/twitch-detay.component';
 import { DuyuruListComponent } from './components/duyuru/duyuru-list/duyuru-list.component';
 import { DuyuruDetayComponent } from './components/duyuru/duyuru-detay/duyuru-detay.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { DuyuruDetayComponent } from './components/duyuru/duyuru-detay/duyuru-de
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,8 @@
-<div *ngIf="galeri.length>0; else noIcerik">
-    <ng-template [ngTemplateOutlet]="icerikList" [ngTemplateOutletContext]="{icerik: galeri}"></ng-template>
-</div>
+
+    <div *ngIf="galeri.length>0; else noIcerik">
+        <ng-template [ngTemplateOutlet]="icerikList" [ngTemplateOutletContext]="{icerik: galeri}"></ng-template>
+    </div>
+
 
 <ng-template #icerikList let-icerik="icerik">
     <div *ngFor="let icerik of icerik"  >
@@ -25,9 +27,41 @@
 </ng-template>
 
 
-
+<!-- 
 <ng-template #noIcerik>
     <div class="alert alert-warning"> Gösterilecek bilgi yok!</div>
+</ng-template> -->
+
+<ng-template #noIcerik> 
+    <div class="alert alert-warning">
+        <div class="d-flex align-items-center">
+            <strong>Galeri Listesi Yükleniyor lütfen bekleyiniz</strong>
+            <div class="spinner-grow ms-auto text-primary" role="status">
+                <span class="visually-hidden"></span>
+              </div>
+              <div class="spinner-grow text-secondary" role="status">
+                <span class="visually-hidden"></span>
+              </div>
+              <div class="spinner-grow text-success" role="status">
+                <span class="visually-hidden"></span>
+              </div>
+              <div class="spinner-grow text-danger" role="status">
+                <span class="visually-hidden"></span>
+              </div>
+              <div class="spinner-grow text-warning" role="status">
+                <span class="visually-hidden"></span>
+              </div>
+              <div class="spinner-grow text-info" role="status">
+                <span class="visually-hidden"></span>
+              </div>
+              <div class="spinner-grow text-light" role="status">
+                <span class="visually-hidden"></span>
+              </div>
+              <div class="spinner-grow text-dark" role="status">
+                <span class="visually-hidden"></span>
+              </div>
+        </div>
+    </div>
 </ng-template>
 
 

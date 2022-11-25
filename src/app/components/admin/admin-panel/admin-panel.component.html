@@ -1,0 +1,70 @@
+  <div class="">
+    <div class="row mt-2">
+        <div class="col-2 mt-5">
+            <div class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">Konvoylar</a>
+            <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">Twitch Partnerler</a>
+            <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Duyurular</a>
+            <!-- <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings"></a> -->
+           </div>
+        </div>
+        <div class="col-8">
+           <div class="tab-content" id="nav-tabContent">
+               <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list"><app-galeri-konvoy-ekle></app-galeri-konvoy-ekle></div>
+               <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list"><app-twitch-partner-ekle></app-twitch-partner-ekle></div>
+               <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list"><app-duyuru-ekle></app-duyuru-ekle></div>
+               <!-- <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">liste4</div> -->
+          </div>
+        </div>
+    </div>
+ </div>
+    <!-- <div class="col-7 text-white">
+        <h3 class="">Konvoy ekle</h3>
+        <form >
+            <div class="mb-1">
+                <label for="name" class="form-label">Konvoy Başlığı</label>
+                <input #isim type="text" name="name" id="name" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="aracsayisi" class="form-label">Araç Sayısı</label>
+                <input #aracsayisi type="text" name="aracsayisi" id="aracsayisi" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="imageUrl" class="form-label">Kapak Resmi</label>
+                <input #kapakresmi type="text" name="imageUrl" id="imageUrl" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="image1Url" class="form-label">İçeriğin 1. resmi</label>
+                <input #image1 type="text" name="image1Url" id="image1Url" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="image2Url" class="form-label">İçeriğin 2. resmi</label>
+                <input #image2  type="text" name="image2Url" id="image2Url" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="image4Url" class="form-label">İçeriğin 3. resmi</label>
+                <input #image3 type="text" name="image3Url" id="image3Url" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="image4Url" class="form-label">İçeriğin 4. resmi</label>
+                <input #image4 type="text" name="image4Url" id="image4Url" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="videoUrl" class="form-label">İçeriğin video url'si</label>
+                <input #videoUrl type="text" name="videoUrl" id="videoUrl" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="aciklama" class="form-label">Konvoy Açıklaması</label>
+                <textarea #aciklama name="aciklama" id="aciklama" class="form-control"></textarea>
+            </div>
+            <div class="form-check form-switch mb-3">
+                <input #isActive class="form-check-input" type="checkbox" role="switch" name="isActive" id="isActive">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Görülebilir</label>
+            </div>
+        </form>
+        <button type="button" class="btn btn-success" (click)="konvoyEkle(isim,aracsayisi,kapakresmi,image1,image2,image3,image4,videoUrl,aciklama,isActive)">Konvoy Ekle</button>
+    </div>
+    <div class="col-3">
+        deneme alan
+    </div>
+</div> -->

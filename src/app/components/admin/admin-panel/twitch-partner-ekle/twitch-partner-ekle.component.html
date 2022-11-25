@@ -1,0 +1,42 @@
+<div class="text-white">
+    <h3>Twitch Partner Ekle</h3>
+    <form>
+        <div class="mb-1">
+            <label for="name" class="form-label">Yayıncı İsmi</label>
+            <input #yayinciname type="text" name="name" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="twadress" class="form-label">Twitch Linki</label>
+            <input #twlink type="text" name="twadress" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="twkapakimg" class="form-label">Kapak Fotoğrafı Url'si</label>
+            <input #twkapak type="text" name="twkapakimg" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="twimg1" class="form-label">İçerik 1. foto url'si</label>
+            <input #twimg1 type="text" name="twimg1" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="twimg2" class="form-label">İçerik 2. foto url'si</label>
+            <input #twimg2 type="text" name="twimg2" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="twimg3" class="form-label">İçerik 3. foto url'si</label>
+            <input #twimg3 type="text" name="twimg3" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="twimg4" class="form-label">İçerik 4. foto url'si</label>
+            <input #twimg4 type="text" name="twimg4" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="twaciklama" class="form-label">Yayıncı Açıklaması</label>
+            <textarea #twaciklama type="text" name="twaciklama" class="form-control"></textarea>
+        </div>
+        <div class="form-check form-switch mb-3">
+            <input #isActive class="form-check-input" type="checkbox" role="switch" name="isActive" id="isActive">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Görülebilir</label>
+        </div>
+    </form>
+    <button type="button" class="btn btn-success" (click)="twPartnerEkle(yayinciname,twlink,twkapak,twimg1,twimg2,twimg3,twimg4,twaciklama,isActive)">Partner Ekle</button>
+</div>

@@ -1,0 +1,35 @@
+<div class="text-white">
+    <h3>Duyuru Ekle</h3>
+    <form>
+        <div class="mb-1">
+            <label for="duyuruName" class="form-label">Duyuru Başlığı</label>
+            <input #duyuruName type="text" name="duyuruName" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="duyuruKapak" class="form-label"> Duyuru Kapak Fotoğrafı Url'si</label>
+            <input #duyuruKapak type="text" name="duyuruKapak" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="dyrimage1" class="form-label">Duyuru detayı 1. foto url'si</label>
+            <input #dyrimage1 type="text" name="dyrimage1" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="dyrimage2" class="form-label">Duyuru detayı 2. foto url'si</label>
+            <input #dyrimage2 type="text" name="dyrimage2" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="dyrimage3" class="form-label">Duyuru detayı 3. foto url'si</label>
+            <input #dyrimage3 type="text" name="dyrimage3" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="duyuruAciklama" class="form-label">Duyuru Açıklaması</label>
+            <textarea #duyuruAciklama type="text" name="duyuruAciklama" class="form-control"></textarea>
+        </div>
+        <div class="form-check form-switch mb-3">
+            <input #isActive class="form-check-input" type="checkbox" role="switch" name="isActive" id="isActive">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Görülebilir</label>
+        </div>
+    </form>
+    <button type="button" class="btn btn-success" (click)="duyuruEkle(duyuruName,duyuruKapak,dyrimage1,dyrimage2,dyrimage3,duyuruAciklama,isActive)">Partner Ekle</button>
+</div>
+

@@ -1,0 +1,56 @@
+<div *ngIf="twcicerik.length>0; else noTwIcerik">
+    <ng-template [ngTemplateOutlet]="twcList" [ngTemplateOutletContext]="{twcicrk : twcicerik}"></ng-template>
+</div>
+
+<ng-template #twcList let-twcicrk="twcicrk">
+    <div *ngFor="let twcicrk of twcicrk">
+        <div class="card mb-3" *ngIf="twcicrk.isActive">
+            <div class="row">
+                <div class="col-3">
+                    <img src="{{ twcicrk.twkapakimg }}" alt="" class="img-fluid rounded-start">
+                </div>
+                <div class="col-8 ">
+                    <div class="card-body">
+                        <h5 class="card-title mb-0">{{ twcicrk.name }}</h5>
+                        <h6 class="mb-0">Yayın Adresi :  <a href="{{ twcicrk.twadress }}">{{ twcicrk.twadress }}</a></h6>
+                        <h6 class="card-text" > {{ twcicrk.twaciklama }}</h6>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <button routerLink="/twitch/{{twcicrk.id}}" class="btn btn-outline-danger mt-4 btn-sm">Detay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #noTwIcerik>
+    <div class="alert alert-warning"> Gösterilecek bilgi yok!.</div>
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="alert alert-warning" *ngIf="twcicerik.length>0 else notwIcerik"> 
+    Şuan için Twitch Partnerimiz bulunmamaktadır...
+    <p>Partnerimiz olmak ister misin? <a href="/sende-aramiza-katil">Buradan</a> bize ulaşabilirsin</p>
+</div> -->

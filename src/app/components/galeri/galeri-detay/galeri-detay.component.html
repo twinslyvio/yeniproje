@@ -1,0 +1,39 @@
+
+
+<div class="card mb-3" *ngIf="icerik else noIcerik">
+    <div>
+        <div class="row">
+            <div class="col-3">
+                <img src="{{ icerik.imageUrl }}" alt="" class="img-fluid rounded-start">
+            </div>
+            <div class="col-8 ">
+                <div class="card-body">
+                    <h5 class="card-title mb-0">{{ icerik.name }}</h5>
+                    <h6 class="mb-0">Araç Sayısı : {{ icerik.aracsayisi }}</h6>
+                    <h6 class="card-text" >{{ icerik.aciklama }}</h6>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-3">
+                <img src="{{ icerik.image1Url }}" alt="" class="img-fluid rounded-start">
+            </div>
+            <div class="col-3">
+                <img src="{{ icerik.image2Url }}" alt="" class="img-fluid rounded-start">
+            </div>
+            <div class="col-3">
+                <img src="{{ icerik.image3Url }}" alt="" class="img-fluid rounded-start">
+            </div>
+            <div class="col-3">
+                <img src="{{ icerik.image4Url }}" alt="" class="img-fluid rounded-start">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <iframe class="d-flex" width="560" height="315" src="https://www.youtube.com/embed/{{icerik.videoUrl}}"></iframe>
+        </div>
+    </div>
+</div> 
+
+<ng-template #noIcerik>
+    <div class="alert alert-warning"> Gösterilecek bilgi yok!</div>
+</ng-template>

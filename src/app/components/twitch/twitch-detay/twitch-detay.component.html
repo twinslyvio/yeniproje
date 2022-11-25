@@ -1,0 +1,39 @@
+<div class="card mb-3" *ngIf="twcicerik else noTwcIcerik">
+    <div>
+        <div class="row">
+            <div class="col-3">
+                <img src="{{ twcicerik.twkapakimg }}" alt="" class="img-fluid rounded-start">
+            </div>
+            <div class="col-8 ">
+                <div class="card-body">
+                    <h5 class="card-title mb-0">{{ twcicerik.name }}</h5>
+                    <h6 class="mb-0">PARTNER ADRESİ : <a href="{{ twcicerik.twadress }}">{{ twcicerik.twadress }}</a></h6>
+                    <h3></h3>
+                    <h6 class="card-text" >{{ twcicerik.twaciklama }}</h6>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-3">
+                <img src="{{ twcicerik.twimg1 }}" alt="" class="img-fluid rounded-start">
+            </div>
+            <div class="col-3">
+                <img src="{{ twcicerik.twimg2 }}" alt="" class="img-fluid rounded-start">
+            </div>
+            <div class="col-3">
+                <img src="{{ twcicerik.twimg3 }}" alt="" class="img-fluid rounded-start">
+            </div>
+            <div class="col-3">
+                <img src="{{ twcicerik.twimg4 }}" alt="" class="img-fluid rounded-start">
+            </div>
+        </div>
+        <div class="mt-3 img-fluid">
+            <iframe [src]="urlSafe" frameborder="0" allowfullscreen="true" scrolling="no" height="720" width="1294"></iframe>
+
+        </div>
+    </div>
+</div> 
+
+<ng-template #noTwcIcerik>
+    <div class="alert alert-warning"> Gösterilecek bilgi yok!</div>
+</ng-template>

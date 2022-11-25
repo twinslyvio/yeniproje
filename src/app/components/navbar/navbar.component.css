@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.navbar-title {
+    font-family: 'Bebas Neue';
+    font-size: 50px;
+    font-weight: bold;
+
+}
+
+.yan-menu {
+    font-size: 17px;
+    border-radius: 10px;
+    
+}
+
+.yan-menu:hover {
+    background-color: rgb(253, 72, 72);
+    transition: 0.5s;
+    border: 50px;
+    color:white !important;
+}

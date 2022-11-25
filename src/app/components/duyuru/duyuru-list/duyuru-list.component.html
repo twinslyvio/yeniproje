@@ -1,0 +1,28 @@
+<div *ngIf="dyrIcerik.length>0; else noduyuru">
+    <ng-template [ngTemplateOutlet]="duyuruList" [ngTemplateOutletContext]="{duyuru : dyrIcerik}"></ng-template>
+</div>
+
+<ng-template #duyuruList let-duyuru="duyuru">
+    <div *ngFor="let duyuru of duyuru">
+        <div class="card mb-3" *ngIf="duyuru.isActive">
+            <div class="row">
+                <div class="col-3">
+                    <img src="{{ duyuru.duyuruKapak }}" alt="" class="img-fluid rounded-start">
+                </div>
+                <div class="col-8 ">
+                    <div class="card-body">
+                        <h5 class="card-title mb-0">{{ duyuru.duyuruName }}</h5>
+                        <h6 class="card-text" > {{ duyuru.duyuruAciklama }}</h6>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <button routerLink="/duyurular/{{duyuru.id}}" class="btn btn-outline-danger mt-4 btn-sm">Detay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #noduyuru>
+    <div class="alert alert-warning"> Gösterilecek bilgi yok!.</div>
+</ng-template>

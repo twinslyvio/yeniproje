@@ -1,0 +1,46 @@
+<div *ngIf="galeri.length>0; else noIcerik">
+    <ng-template [ngTemplateOutlet]="icerikList" [ngTemplateOutletContext]="{icerik: galeri}"></ng-template>
+</div>
+
+<ng-template #icerikList let-icerik="icerik">
+    <div *ngFor="let icerik of icerik"  >
+        <div class="card mb-3" *ngIf="icerik.isActive">
+            <div class="row">
+                <div class="col-3">
+                    <img src="{{ icerik.imageUrl }}" alt="" class="img-fluid rounded-start">
+                </div>
+                <div class="col-8 ">
+                    <div class="card-body">
+                        <h5 class="card-title mb-0">{{ icerik.name }}</h5>
+                        <h6 class="mb-0">Araç Sayısı : {{ icerik.aracsayisi }}</h6>
+                        <h6 class="card-text" >{{ icerik.aciklama }}</h6>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <button routerLink="/galeri/{{icerik.id}}" class="btn btn-outline-danger mt-4 btn-sm">Detay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+
+
+<ng-template #noIcerik>
+    <div class="alert alert-warning"> Gösterilecek bilgi yok!</div>
+</ng-template>
+
+
+
+
+
+
+<!-- <div class="card bg-light " *ngIf="selectedKonvoyDetay">
+    <div class="card-body text-danger">
+        {{selectedKonvoyDetay.id}} ID'li {{selectedKonvoyDetay.name}}
+    </div>
+    <div class="col-1 row">
+        <button class="btn btn-outline-danger">Kaldır</button>
+        <button (click)="-konvoyDetayKaldir()" class="btn btn-outline-danger">Kaldır</button>
+    </div>
+</div> -->
